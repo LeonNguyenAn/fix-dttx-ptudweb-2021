@@ -7,8 +7,10 @@ const port = 3000;
 
 //Định nghĩa routes (Đường dẫn)
 app.get('/', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-type', 'text/html');
+    // res.statusCode = 200;
+    // res.setHeader('Content-type', 'text/html');
+
+    res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('<h1>Hello Leon</h1>');
 });
 
