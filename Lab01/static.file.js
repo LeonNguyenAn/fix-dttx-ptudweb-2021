@@ -1,22 +1,22 @@
 /**
  * Demo : Acess static resource in express (Truy cập tài nguyên tĩnh)
- */
+*/
 
- 'use strict'
+'use strict'
 
- const express = require('express');
- const path = require('path');
- const fs = require('fs');
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
  
- const app = express();
+const app = express();
 
- //Cấu hình port, hostName
- const hostName = 'localhost';
- const port = 3000;
+//Cấu hình port, hostName
+const hostName = 'localhost';
+const port = 3000;
 
- app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
- app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     fs.readFile('./public/index.html', 'utf-8', (error, data) => {
         console.log('==> Reading file');
@@ -28,9 +28,9 @@
             res.end(data);
         }
     })
- });
+});
  
- //Start server
- app.listen(port, hostName, () => {
-     console.log(`Express server is running at http://${hostName}:${port}`);
- });
+//Start server
+app.listen(port, hostName, () => {
+    console.log(`Express server is running at http://${hostName}:${port}`);
+});

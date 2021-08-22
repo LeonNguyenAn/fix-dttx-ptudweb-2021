@@ -38,7 +38,6 @@ app.delete('/', (req, res) => {
     res.end('This is DELETE method');
 });
 
-
 //Start server
 app.listen(port, hostName, () => {
     console.log(`Express server is running at http://${hostName}:${port}`);
